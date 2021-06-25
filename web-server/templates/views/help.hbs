@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">  <!--Get the absolute path, css is its own folder which can contains all our css scripts we will be using.-->
+    <link rel="icon" href="/img/cloud-no-bg.png">
+    <title>Help</title>
+</head>
+<body>
+    {{>header}} <!--get header partial-->
+    {{!--rendering the partial, must be in {{}} and have a > sign before it and then the filename (partials should be used to prevent repetive code suchh as headers and footers--}}
+    {{!-- <h3>{{helpStatement}}</h3> --}}
+    <div class="helpContainer">
+        <h2>Need help? Reach out</h2>
+        <ul>
+            <li>Phone: 999-9999-999</li>
+            <li>Email: JohnDoe@gmail.com</li>
+            <li>Location: Fake St. Phoenix, AZ</li>
+        </ul>
+    </div>
+    {{>footer}}
+</body>
+</html>

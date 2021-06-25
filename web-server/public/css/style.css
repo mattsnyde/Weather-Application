@@ -1,0 +1,377 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+    --text-color: #B2AB8C;
+    --hover-color: #DBE6FD;
+}
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #47597E;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    height:120px;
+    width: 100vh;
+    position: relative;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .09)
+
+}
+
+nav h1{
+    color: var(--text-color);
+    text-align: center;
+    font-size: 40px;
+}
+
+nav ul{
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0px 100px;
+}
+
+nav ul li a{
+    color: var(--text-color);
+    margin: 0px 10px;
+    font-size: 15px;
+    position: relative;
+}
+
+nav ul li a:hover{
+    cursor: pointer;
+}
+
+nav ul li a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+   background-color: var(--hover-color);
+   transform-origin: left;
+   transform: scaleX(0);
+   transition: transform .5s linear;
+}
+
+nav ul li a:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--hover-color);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s linear;
+}
+
+nav ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+nav ul li a:hover:after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    height: 400px;
+    width: 500px;
+    background-color: #293B5F;
+    border-radius: 20px;
+    box-shadow: 1px 3px 5px var(--text-color);
+}
+
+.form .title{
+    width: 100%;
+    border-bottom: 2px solid var(--text-color);
+    color: var(--hover-color);
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    text-align: center;
+    font-size: 30px;
+}
+
+.address{
+    border: none;
+    color: var(--text-color);
+    background-color: transparent;
+    border-bottom: 1px solid var(--hover-color);
+    text-align: center;
+    font-size: 15px;
+    position: absolute;
+    top: 30%;
+    left:50%;
+    transform: translate(-50%, -30%);
+}
+.address:active{
+    outline: none;
+}
+.address:focus{
+    outline: none;
+}
+.address::placeholder{
+    color: var(--text-color);
+}
+.search{
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 15px;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    transform: translate(-75%, -30%);
+}
+.search:hover{
+    cursor: pointer;
+    animation: searchBtn .75s  1s linear infinite;
+}
+
+.forecast{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-color);
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+ }
+
+
+.addressDisplay{
+    color: var(--text-color);
+    font-size: 17px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes searchBtn {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+.aboutCard, .helpContainer{
+    background-color: #293B5F;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 550px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 3px 7px rgba(178, 171, 140);
+}
+
+.helpContainer{
+    width: 400px;
+    height: 500px;
+}
+
+.helpContainer h2{
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 20px;
+    font-size: 30px;
+    color: var(--hover-color);
+    border-bottom: 2px solid var(--text-color);
+}
+
+.helpContainer ul{
+    display: inline-block
+}
+
+.helpContainer ul li{
+    color: var(--hover-color);
+    margin: 100px 0px;
+    font-size: 20px;
+}
+
+
+
+.aboutCard h3{
+    color: var(--hover-color);
+    font-size: 20px;
+    margin: 0px 10px;
+   margin-top: 30px;
+}
+
+.aboutCard h1{
+    height: 99%;
+    font-size: 25px;
+    border-right: 2px solid var(--text-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hover-color);
+    padding:0px 10px;
+}
+
+.errorContainer{
+    width: 500px;
+    height:500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.errorContainer h1{
+    color: var(--text-color);
+    font-size: 60px;
+}
+
+footer{
+ position: absolute;
+ bottom: 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 15px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, .9)
+}
+
+@media(max-width: 1000px){
+    /* .form, .form .title, .address, .search, .forecast, .addressDisplay */
+    .form{
+        width: 400px;
+        height: 300px;
+    }
+    .forecast,.addressDisplay{
+        font-size: 15px;
+    }
+    .aboutCard{
+        height: 300px;
+        width: 450px;
+
+    }
+    .aboutCard h1{
+        font-size: 20px;
+    }
+    .aboutCard h3{
+        font-size: 15px;
+    }
+    .helpContainer{
+        width: 400px;
+        height: 300px;
+    }
+    .helpContainer h2{
+        font-size: 20px;
+    }
+    .helpContainer ul li{
+        margin: 50px 0px;
+        font-size: 15px;
+    }
+    .errorContainer{
+        width: 300px;
+        height: 300px;
+    }
+    .errorContainer h1{
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 900px){
+    nav h1{
+        font-size: 30px;
+    }
+    nav ul li{
+        margin: 0px 30px;
+    }
+    nav ul li a{
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width: 500px){
+    .form{
+        width: 300px;
+        height: 400px;
+    }
+
+    .aboutCard{
+        height: 400px;
+        width: 300px;
+    }
+    .aboutCard h1{
+        font-size: 17px;
+    }
+    .aboutCard h3{
+        font-size: 13px;
+    }
+    .helpContainer{
+        width: 200px;
+        height: 300px;
+    }
+    .errorContainer{
+        width: 200px;
+        height: 200px;
+    }
+    .errorContainer h1{
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 400px){
+    .form{
+        height: 300px;
+        width: 300px;
+    }
+    .addressDisplay, .forecast, .address::placeholder, .address, .search{
+        font-size: 12px;
+    }
+    .form .title{
+        font-size: 15px;
+    }
+    nav ul li{
+        margin: 15px 0px;
+    }
+}

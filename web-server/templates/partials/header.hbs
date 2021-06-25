@@ -1,0 +1,12 @@
+<!--I can load this partial into all of the pages inside of the views folder-->
+<nav>
+    <!--You are able to use injection inside of partials as well, title will change accordingly with what page we are on because each route has its own title for example, the title of /about is about anf the title of /help is Help and the title of localhost:5000 is Weather-->
+    {{!-- If you want to inject into a handle bars function do the following, Inside of whatever html tag you are using you need to have 2 sets of curly brackets {{}} and inside you need to have the property name and then the value of the property will be displayed on the page --}}
+    <h1>{{title}}</h1>
+    <ul>
+        <li><a href="/">Weather</a></li> <!--root of the site so all we need is /-->
+        <li> <a href="/about">About</a></li>
+        <li> <a href="/help">Help</a></li>
+    </ul>
+    {{!-- <p>{{name}}</p> --}}
+</nav>
