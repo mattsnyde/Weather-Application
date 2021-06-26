@@ -17,7 +17,7 @@ searchBtn.addEventListener('click', (e) => {
     if(address.match(unspecificLoc) || address.match(specificLoc) || address.match(ultraSpecificLoc)){
         //Using fetch api
         //First arguement: Pass url we are trying to fetch from then we add a .then and pass in response and an arrow function
-        fetch(`http://localhost:5000/weather?address=${address}`).then((response)=>{
+        fetch(`/weather?address=${address}`).then((response)=>{
             response.json().then((data)=>{
                 if(data.error){
                     forecast.innerHTML += data.error

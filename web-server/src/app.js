@@ -5,7 +5,7 @@ const hbs = require('hbs') //load in hbs module.
 const path = require('path') //get built in path module
 const express = require('express'); //load in express library, express is a function
 const app = express();
-const port = 5000;
+const portHeroku = process.env.PORT || 5000;
 
 //In order to restart server when new templates are created we can just tweak our "nodeman app.js" that we been running inside of our terminal.
     //The new command that we want to be using instead of nodeman app.js is "nodeman app.js -e js, hbs"
@@ -124,6 +124,6 @@ app.get('*', (req, res)=>{ //Handle what we do when user goes to an undefined ur
 })
  
 //Starts the server and has it listen on a specific port. Pass callback function that executes when server is up
-app.listen(port, () => { 
-    console.log('Hello world')
+app.listen(portHeroku, () => { 
+    console.log(`Server is up ${portHeroku}`)
 })
