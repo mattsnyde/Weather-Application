@@ -22,8 +22,6 @@ searchBtn.addEventListener('click', (e) => {
                 if(data.error){
                     forecast.innerHTML += data.error
                 }else{
-                    // forecast.innerHTML += data.forecast
-                    // addressDisplay.innerHTML += data.location
                     forecast.textContent = data.forecast;
                     addressDisplay.textContent = data.location;
                 }
